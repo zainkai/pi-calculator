@@ -18,7 +18,7 @@ func distOrigin(x, y float64) float64 {
 	return math.Sqrt(x + y)
 }
 
-func (p Pi) Calculate(percision int) float64 {
+func (p *Pi) Calculate(percision int) float64 {
 	countInCircle := 0
 
 	for i := 0; i < percision; i++ {
@@ -32,7 +32,7 @@ func (p Pi) Calculate(percision int) float64 {
 }
 
 func main() {
-	pi := Pi{
+	pi := &Pi{
 		// anonymous function
 		func() float64 { return rand.Float64() },
 	}
